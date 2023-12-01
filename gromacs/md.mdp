@@ -1,0 +1,35 @@
+integrator              = md        ; leap-frog integrator
+nsteps                  = 100000   ; 2 fs * 1000000 = 2000 ps (2 ns) for production
+dt                      = 0.0002     ; 2 fs
+nstxtcout               = 5000      ; Output coordinates every 10 ps
+nstxout                 = 5000      ; Output coordinates every 10 ps
+nstvout                 = 5000      ; Output velocities every 10 ps
+nstenergy               = 5000      ; Output energy every 10 ps
+nstlog                  = 5000      ; Output log every 10 ps
+continuation            = yes       ; Continuation from NVT
+constraint_algorithm    = lincs     ; Holonomic constraints 
+constraints             = all-bonds ; All bonds (even heavy atom-H bonds) constrained
+lincs_iter              = 1         ; Accuracy of LINCS
+lincs_order             = 4         ; Also related to LINCS
+nstlist                 = 10        ; Frequency to update the neighbor list
+rcoulomb                = 1.0       ; Short-range electrostatic cut-off
+rvdw                    = 1.0       ; Short-range Van der Waals cut-off
+coulombtype             = cutoff    ; Treatment of long range electrostatic interactions
+tcoupl                  = V-rescale ; Temperature coupling
+tc-grps                 = Protein   ; Group(s) to couple separately
+tau_t                   = 0.1       ; Time constant for temperature coupling
+ref_t                   = 300       ; Reference temperature for coupling
+pbc                     = xyz        ; No Periodic Boundary Conditions
+
+; Pull code
+pull                    = yes           ; Enable pulling
+pull-ngroups            = 2             ; Number of groups involved in pulling
+pull-ncoords            = 1             ; Number of pull coordinates
+pull-group1-name        = Group1        ; Name of the group to be fixed
+pull-group2-name        = Group2        ; Name of the group to be pulled
+pull-coord1-type        = umbrella      ; Type of pulling (umbrella, constant_force)
+pull-coord1-geometry    = distance      ; Pull along a straight line (distance)
+pull-coord1-groups      = 1 2           ; Groups involved (Group1 and Group2)
+pull-coord1-dim         = N N Y         ; Pulling direction (Y axis in this case)
+pull-coord1-rate        = 0.01          ; Pulling rate in nm/ps
+pull-coord1-k           = 1000          ; Force constant in kJ/mol/nm^2

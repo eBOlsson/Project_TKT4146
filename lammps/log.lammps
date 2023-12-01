@@ -1,0 +1,167 @@
+LAMMPS (2 Aug 2023)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:98)
+  using 1 OpenMP thread(s) per MPI task
+Loaded 1 plugins from C:\NTNU_prog\LAMMPS 64-bit 2Aug2023\plugins
+units real
+dimension 3
+
+atom_style full
+boundary   p p s
+
+
+#########################################################################################
+
+read_data collagen_data_file_no_water
+Reading data file ...
+  orthogonal box = (0 0 0) to (40 40 200)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  1128 atoms
+  scanning bonds ...
+  24 = max bonds/atom
+  scanning angles ...
+  36 = max angles/atom
+  scanning dihedrals ...
+  12 = max dihedrals/atom
+  scanning impropers ...
+  6 = max impropers/atom
+  reading bonds ...
+  1242 bonds
+  reading angles ...
+  1710 angles
+  reading dihedrals ...
+  828 dihedrals
+  reading impropers ...
+  462 impropers
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:    0        0        0       
+  special bond factors coul:  0        0        0       
+    24 = max # of 1-2 neighbors
+   306 = max # of 1-3 neighbors
+  4392 = max # of 1-4 neighbors
+    14 = max # of special neighbors
+  special bonds CPU = 0.004 seconds
+  read_data CPU = 0.023 seconds
+
+########################################################################################
+
+pair_style    lj/cut 9.0
+
+pair_coeff 7 7 0.876770682956609 0.29760076860287393
+pair_coeff 4 7 0.8292446652875998 0.31741672241291014
+pair_coeff 3 4 0.6669936645322 0.3340715028567879
+pair_coeff 4 6 1.1631608695761655 0.2981591002454447
+pair_coeff 1 7 0.876770682956609 0.29760076860287393
+pair_coeff 1 6 1.2298244326395515 0.2795453772078163
+pair_coeff 4 5 0.5641989226769262 0.3373287269619898
+pair_coeff 4 4 0.7842948313338785 0.3385521352661637
+pair_coeff 2 4 0 0
+pair_coeff 3 6 0.9891955165885762 0.29421305711486523
+pair_coeff 3 3 0.5672363641227471 0.32965017022637283
+pair_coeff 4 8 1.1631608695761655 0.2981591002454447
+pair_coeff 2 6 0 0
+pair_coeff 2 5 0 0
+pair_coeff 5 5 0.40586831843380283 0.33610973962499585
+pair_coeff 7 8 1.2298244326395515 0.2795453772078163
+pair_coeff 6 7 1.2298244326395515 0.2795453772078163
+pair_coeff 2 3 0 0
+
+####################################
+pair_coeff 1 1 0.0 0.0
+pair_coeff 1 2 0.0 0.0
+pair_coeff 1 3 0.0 0.0
+pair_coeff 1 4 0.0 0.0
+pair_coeff 1 5 0.0 0.0
+pair_coeff 1 8 0.0 0.0
+pair_coeff 2 2 0.0 0.0
+pair_coeff 2 7 0.0 0.0
+pair_coeff 2 8 0.0 0.0
+pair_coeff 3 5 0.0 0.0
+pair_coeff 3 7 0.0 0.0
+pair_coeff 3 8 0.0 0.0
+pair_coeff 5 6 0.0 0.0
+pair_coeff 5 7 0.0 0.0
+pair_coeff 5 8 0.0 0.0
+pair_coeff 6 6 0.0 0.0
+pair_coeff 6 8 0.0 0.0
+pair_coeff 8 8 0.0 0.0
+####################################
+
+bond_style     gromos
+
+#{'gb_2': 1, 'gb_20': 2, 'gb_26': 3, 'gb_4': 4, 'gb_9': 5,'gb_5':6}
+
+bond_coeff     1 0.1000  4.675e+06  #1.8700e+07
+bond_coeff     2 0.1470  2.1775e+06 #8.7100e+06
+bond_coeff     3 0.1530  1.7875e+05 #7.1500e+06
+bond_coeff     4 0.1230  4.150e+06  #1.6600e+07
+bond_coeff     5 0.1330  2.950e+06  #1.1800e+07
+bond_coeff     6 0.1250  3.350e+06  #1.3400e+07
+
+angle_style    harmonic
+
+#'ga_9': 1, 'ga_10': 2, 'ga_20': 3, 'ga_12': 4, 'ga_29': 5,'ga_18':6,'ga_32':7,'ga_30':8
+
+angle_coeff    1 54.75      380.00
+angle_coeff    2 54.75      425.00
+angle_coeff    3 58.00      620.00
+angle_coeff    4 54.50      520.00
+angle_coeff    5 60.00      560.00
+angle_coeff    6 57.50      610.00
+angle_coeff    7 62.00      730.00
+angle_coeff    8 61.00      700.00
+
+dihedral_style  fourier
+
+#{'gd_19': 1, 'gd_17': 2, 'gd_20': 3, 'ga_4': 4}
+
+dihedral_coeff 1 1 1.0 6 180
+dihedral_coeff 2 1 5.86 3 0.0
+dihedral_coeff 3 1 1.0 6 0.0
+dihedral_coeff 4 1 33.5 2 180
+
+improper_style harmonic
+
+improper_coeff 1 210 90
+improper_coeff 2 202.5 96
+
+#setting time step
+timestep        1.0
+fix             fxnvt all nvt temp 300.0 300.0 100.0
+
+# define streching
+group           stretchGrp id 1 189 377 #Must be new one, maybe thee
+3 atoms in group stretchGrp
+fix             stretching stretchGrp smd cvel 100.0 0.0001 tether NULL 10 NULL 0.0
+# define freeze
+group freezeGrp id 181 369 557
+3 atoms in group freezeGrp
+fix 1 freezeGrp spring/self 10000
+
+# screen output
+thermo_style    custom step f_stretching[1] f_stretching[2] f_stretching[3] f_stretching[4] f_stretching[5] f_stretching[6] f_stretching[7] etotal
+thermo          500
+
+dump 1 all atom 1000 dump.lammpstrj
+run             100000
+Generated 0 of 28 mixed pair_coeff terms from geometric mixing rule
+WARNING: Communication cutoff 11 is shorter than a bond length based estimate of 10518752. This may lead to errors. (src/comm.cpp:723)
+Neighbor list info ...
+  update: every = 1 steps, delay = 0 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 11
+  ghost atom cutoff = 11
+  binsize = 5.5, bins = 8 8 33
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair lj/cut, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d
+      bin: standard
+WARNING: Communication cutoff 11 is shorter than a bond length based estimate of 10518752. This may lead to errors. (src/comm.cpp:723)
+Per MPI rank memory allocation (min/avg/max) = 24.98 | 24.98 | 24.98 Mbytes
+   Step     f_stretching[1] f_stretching[2] f_stretching[3] f_stretching[4] f_stretching[5] f_stretching[6] f_stretching[7]     TotEng    
+         0   0              0              0              0              12.033433      178.19733      0              1.2134665e+28
+WARNING: Communication cutoff 11 is shorter than a bond length based estimate of 10518752. This may lead to errors. (src/comm.cpp:723)
+ERROR on proc 0: Too many neighbor bins (src/nbin_standard.cpp:213)
+Last command: run             100000

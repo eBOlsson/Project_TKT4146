@@ -1,0 +1,51 @@
+
+compute		pot all pe/atom
+compute		pressure all pressure thermo_temp
+
+# give initial velocities from a Maxwell distribution for the specified temperature
+
+variable	temp equal 293
+
+velocity	all create ${temp} 887723
+velocity	all create 293 887723
+
+# fixes to be invoked throughout the simulation
+
+fix		1 all nvt temp ${temp} ${temp} 0.1 drag 2.0
+fix		1 all nvt temp 293 ${temp} 0.1 drag 2.0
+fix		1 all nvt temp 293 293 0.1 drag 2.0
+fix		pzz all ave/time 20 10 200 c_pressure[3]
+
+# specify timestep and output of thermodynamic data and per-atom data
+
+
+timestep	0.0015
+thermo		200
+thermo_style	custom step temp etotal press vol f_pzz ly lx
+
+dump		1 all custom 1000 dump.collagen id type xs ys zs c_pot
+
+# first run some thousand time-steps to relax the system initially
+
+run		100000
+Generated 0 of 28 mixed pair_coeff terms from geometric mixing rule
+WARNING: Communication cutoff 22 is shorter than a bond length based estimate of 10518752. This may lead to errors. (src/comm.cpp:723)
+Neighbor list info ...
+  update: every = 1 steps, delay = 0 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 22
+  ghost atom cutoff = 22
+  binsize = 11, bins = 2 1 17
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair lj/cut, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d
+      bin: standard
+WARNING: Communication cutoff 22 is shorter than a bond length based estimate of 10518752. This may lead to errors. (src/comm.cpp:723)
+Per MPI rank memory allocation (min/avg/max) = 25.51 | 25.51 | 25.51 Mbytes
+   Step          Temp          TotEng         Press          Volume         f_pzz            Ly             Lx      
+         0   293            1.2134665e+28  6.4094369e+15  21496.247      0              10.768         11.098       
+WARNING: Communication cutoff 22 is shorter than a bond length based estimate of 10518752. This may lead to errors. (src/comm.cpp:723)
+ERROR on proc 0: Too many neighbor bins (src/nbin_standard.cpp:213)
+Last command: run		100000
