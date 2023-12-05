@@ -1,0 +1,19 @@
+# This file was created Tue Dec  5 19:21:15 2023
+# Created by:
+#              :-) GROMACS - gmx mdrun, 2021.4-Ubuntu-2021.4-2 (-:
+# 
+# Executable:   /usr/bin/gmx
+# Data prefix:  /usr
+# Working dir:  /mnt/c/Ntnu/Nanomekanikk/Project_TKT4146/gromacs3
+# Command line:
+#   gmx mdrun -deffnm md_0_1/md_0_1
+# gmx mdrun is part of G R O M A C S:
+#
+# Great Red Owns Many ACres of Sand 
+#
+@    title "Pull force"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "Force (kJ/mol/nm)"
+@TYPE xy
+0.0000	0.000700722
+0.1000	-64.7

@@ -378,4 +378,50 @@ Tabscale = 500 points/nm
 Using SIMD 4x4 nonbonded short-range kernels
 
 Using a 4x4 pair-list setup:
-  update
+  updated every 100 steps, buffer 0.000 nm, rlist 1.000 nm
+At tolerance 0.005 kJ/mol/ps per atom, equivalent classical 1x1 list would be:
+  updated every 100 steps, buffer 0.000 nm, rlist 1.000 nm
+
+Using full Lennard-Jones parameter combination matrix
+
+Will apply potential COM pulling
+with 1 pull coordinate and 2 groups
+Pull group 1:     3 atoms, mass    39.057
+Pull group 2:     3 atoms, mass    39.057
+
+Initializing LINear Constraint Solver
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess and H. Bekker and H. J. C. Berendsen and J. G. E. M. Fraaije
+LINCS: A Linear Constraint Solver for molecular simulations
+J. Comp. Chem. 18 (1997) pp. 1463-1472
+-------- -------- --- Thank You --- -------- --------
+
+The number of constraints is 33
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+G. Bussi, D. Donadio and M. Parrinello
+Canonical sampling through velocity rescaling
+J. Chem. Phys. 126 (2007) pp. 014101
+-------- -------- --- Thank You --- -------- --------
+
+There are: 564 Atoms
+Center of mass motion removal mode is Linear
+We have the following groups for center of mass motion removal:
+  0:  rest
+
+Started mdrun on rank 0 Tue Dec  5 19:21:15 2023
+
+           Step           Time
+              0        0.00000
+
+   Energies (kJ/mol)
+        G96Bond       G96Angle    Proper Dih.  Improper Dih.          LJ-14
+    7.85776e+02    1.64899e+03    1.32685e+03    2.41470e+02    3.15156e+02
+     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.   COM Pull En.
+    7.03086e+03   -1.89463e+03   -9.54435e+03    1.66344e+03    6.13764e-11
+      Potential    Kinetic En.   Total Energy  Conserved En.    Temperature
+    1.57357e+03    2.24149e+03    3.81506e+03    3.81506e+03    3.25591e+02
+ Pressure (bar)   Constr. rmsd
+   -5.18363e-01    4.86606e-06
+
