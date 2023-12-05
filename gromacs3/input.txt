@@ -3,6 +3,7 @@ gmx pdb2gmx -f topology/collagen.pdb -o topology/processed.gro -p topology/topol
 
 
 #The Gromos41a1 force field is used.
+#Remember changing posre
 
 # Step 2: Defining the box
 gmx editconf -f topology/processed.gro -o topology/newbox.gro -c -d 10 -bt cubic

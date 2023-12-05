@@ -2,7 +2,7 @@
 ;	File 'mdout.mdp' was generated
 ;	By user: unknown (1000)
 ;	On host: DESKTOP-7R8DIIJ
-;	At date: Tue Dec  5 19:21:09 2023
+;	At date: Tue Dec  5 19:41:34 2023
 ;
 ;	Created by:
 ;	             :-) GROMACS - gmx grompp, 2021.4-Ubuntu-2021.4-2 (-:
@@ -25,7 +25,7 @@ integrator               = md
 ; Start time and timestep in ps
 tinit                    = 0
 dt                       = 0.002
-nsteps                   = 100000
+nsteps                   = 500000
 ; For exact run continuation or redoing part of a run
 init-step                = 0
 ; Part index is updated automatically on checkpointing (keeps files separate)
@@ -239,7 +239,7 @@ pull-coord1-origin       = 0.0 0.0 0.0
 pull-coord1-vec          = 0.0 0.0 0.0
 pull_coord1_start        = yes
 pull-coord1-init         = 0
-pull-coord1-rate         = 0.01
+pull-coord1-rate         = 0.05
 pull-coord1-k            = 4000
 pull-coord1-kB           = 4000
 

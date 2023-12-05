@@ -1,0 +1,44 @@
+# This file was created Tue Dec  5 19:30:17 2023
+# Created by:
+#              :-) GROMACS - gmx mdrun, 2021.4-Ubuntu-2021.4-2 (-:
+# 
+# Executable:   /usr/bin/gmx
+# Data prefix:  /usr
+# Working dir:  /mnt/c/Ntnu/Nanomekanikk/Project_TKT4146/gromacs3
+# Command line:
+#   gmx mdrun -deffnm md_0_1/md_0_1
+# gmx mdrun is part of G R O M A C S:
+#
+# Glycine aRginine prOline Methionine Alanine Cystine Serine
+#
+@    title "Pull COM"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "Position (nm)"
+@TYPE xy
+0.0000	5.52367
+0.1000	5.54098
+0.2000	5.55522
+0.3000	5.56379
+0.4000	5.55925
+0.5000	5.55679
+0.6000	5.55168
+0.7000	5.54387
+0.8000	5.52764
+0.9000	5.4955
+1.0000	5.51063
+1.1000	5.51051
+1.2000	5.49367
+1.3000	5.48804
+1.4000	5.49627
+1.5000	5.49255
+1.6000	5.49891
+1.7000	5.51349
+1.8000	5.51311
+1.9000	5.51613
+2.0000	5.54048
+2.1000	5.54505
+2.2000	5.54219
+2.3000	5.54164
+2.4000	5.55561
+2.5000	5.54959
+2.6000	5.56654

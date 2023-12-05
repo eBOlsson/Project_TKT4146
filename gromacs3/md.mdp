@@ -1,5 +1,5 @@
 integrator              = md            ; leap-frog integrator
-nsteps                  = 100000         ; 2 fs * 1000000 = 2000 ps (2 ns) for production
+nsteps                  = 500000         ; 2 fs * 1000000 = 2000 ps (2 ns) for production
 dt                      = 0.002         ; 2 fs
 
 ;nstxtcout               = 5000         ; Output coordinates every 10 ps
@@ -44,5 +44,5 @@ pull-coord1-geometry    = distance      ; Pull along a straight line (distance)
 pull-coord1-groups      = 1 2           ; Groups involved (Group1 and Group2)
 pull-coord1-dim         = N N Y         ; Pulling direction (z axis in this case)
 pull_coord1_start       = yes           ; define initial COM distance > 0
-pull-coord1-rate        = 0.01          ; Pulling rate in nm/ps (1[nm/ps]=1000[m/s])
+pull-coord1-rate        = 0.05          ; Pulling rate in nm/ps (1[nm/ps]=1000[m/s])
 pull-coord1-k           = 4000          ; Force constant in kJ/mol/nm^2
