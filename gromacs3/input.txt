@@ -7,26 +7,29 @@ gmx pdb2gmx -f topology/collagen.pdb -o topology/processed.gro -p topology/topol
 # Step 2: Defining the box
 gmx editconf -f topology/processed.gro -o topology/newbox.gro -c -d 10 -bt cubic
 
-gmx grompp -f minim.mdp -r topology/newbox.gro -c topology/newbox.gro -p topology/topology.top -o em/em.tpr -maxwarn 2
+gmx grompp -f minim.mdp -r topology/newbox.gro -c topology/newbox.gro 
+-p topology/topology.top -o em/em.tpr -maxwarn 2
 
 # Step 4: Energy minimization run
 gmx mdrun -v -deffnm em/em
 
 # Step 5: Generating index file
-gmx make_ndx -f processed.gro -o index.ndx
+gmx make_ndx -f topology/processed.gro -o index.ndx
 #[ Group1 ]
 #   182  370  558
 #[ Group2 ]
 #   4  192  380
 
 # Step 6: NVT equilibration setup
-gmx grompp -f nvt.mdp -r em/em.gro -c em/em.gro -p topology/topology.top -n index.ndx -o nvt/nvt.tpr -maxwarn 2
+gmx grompp -f nvt.mdp -r em/em.gro -c em/em.gro -p topology/topology.top -n index.ndx
+ -o nvt/nvt.tpr -maxwarn 2
 
 # Step 7: NVT equilibration run
 gmx mdrun -deffnm nvt/nvt
 
 # Step 8: Production MD setup
-gmx grompp -f md.mdp -r nvt/nvt.gro -c nvt/nvt.gro -p topology/topology.top -n index.ndx -o md_0_1/md_0_1.tpr -maxwarn 2
+gmx grompp -f md.mdp -r nvt/nvt.gro -c nvt/nvt.gro -p topology/topology.top 
+-n index.ndx -o md_0_1/md_0_1.tpr -maxwarn 2
 
 # Step 9: Production MD run
 gmx mdrun -deffnm md_0_1/md_0_1
