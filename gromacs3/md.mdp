@@ -2,12 +2,12 @@ integrator              = md            ; leap-frog integrator
 nsteps                  = 500000         ; 2 fs * 1000000 = 2000 ps (2 ns) for production
 dt                      = 0.002         ; 2 fs
 
-;nstxtcout               = 5000         ; Output coordinates every 10 ps
-nstxout                 = 0             ; Output coordinates every 10 ps
-nstvout                 = 0             ; Output velocities every 10 ps
+nstxout                 = 5000             ; Output coordinates every 10 ps
+nstvout                 = 5000             ; Output velocities every 10 ps
+nstfout                 = 5000
 nstenergy               = 5000          ; Output energy every 10 ps
 nstlog                  = 5000          ; Output log every 10 ps
-nstxout-compressed      = 500           ; save compressed coordinates every 10.0 ps
+nstxout-compressed      = 5000           ; save compressed coordinates every 10.0 ps
 
 continuation            = yes           ; Continuation from NVT
 constraint_algorithm    = lincs         ; Holonomic constraints 

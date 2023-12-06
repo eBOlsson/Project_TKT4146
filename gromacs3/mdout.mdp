@@ -2,7 +2,7 @@
 ;	File 'mdout.mdp' was generated
 ;	By user: unknown (1000)
 ;	On host: DESKTOP-7R8DIIJ
-;	At date: Tue Dec  5 19:41:34 2023
+;	At date: Wed Dec  6 18:07:10 2023
 ;
 ;	Created by:
 ;	             :-) GROMACS - gmx grompp, 2021.4-Ubuntu-2021.4-2 (-:
@@ -11,7 +11,7 @@
 ;	Data prefix:  /usr
 ;	Working dir:  /mnt/c/Ntnu/Nanomekanikk/Project_TKT4146/gromacs3
 ;	Command line:
-;	  gmx grompp -f md.mdp -r nvt/nvt.gro -c nvt/nvt.gro -p topology/topology.top -n index.ndx -o md_0_1/md_0_1.tpr -maxwarn 1
+;	  gmx grompp -f md.mdp -r nvt/nvt.gro -c nvt/nvt.gro -p topology/topology.top -n index.ndx -o md_0_2/md_0_2.tpr -maxwarn 1
 
 ; VARIOUS PREPROCESSING OPTIONS
 ; Preprocessor information: use cpp syntax.
@@ -61,15 +61,15 @@ rtpi                     = 0.05
 
 ; OUTPUT CONTROL OPTIONS
 ; Output frequency for coords (x), velocities (v) and forces (f)
-nstxout                  = 0
-nstvout                  = 0
-nstfout                  = 0
+nstxout                  = 5000
+nstvout                  = 5000
+nstfout                  = 5000
 ; Output frequency for energies to log file and energy file
 nstlog                   = 5000
 nstcalcenergy            = 100
 nstenergy                = 5000
 ; Output frequency and precision for .xtc file
-nstxout-compressed       = 500
+nstxout-compressed       = 5000
 compressed-x-precision   = 1000
 ; This selects the subset of atoms for the compressed
 ; trajectory file. You can select multiple groups. By
