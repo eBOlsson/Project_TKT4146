@@ -855,3 +855,116 @@ Writing checkpoint, step 142800 at Wed Dec  6 20:22:33 2023
  Pressure (bar)   Constr. rmsd
     9.81288e-01    5.22674e-06
 
+Writing checkpoint, step 158300 at Wed Dec  6 20:37:31 2023
+
+
+           Step           Time
+         160000      320.00000
+
+   Energies (kJ/mol)
+        G96Bond       G96Angle    Proper Dih.  Improper Dih.          LJ-14
+    2.79260e+04    2.47524e+04    1.38585e+03    3.70428e+02   -4.73939e+02
+     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.   COM Pull En.
+    4.65497e+03   -1.08623e+03   -6.95903e+03    1.90853e+03    1.27986e+05
+      Potential    Kinetic En.   Total Energy  Conserved En.    Temperature
+    1.80465e+05    2.04293e+03    1.82508e+05    1.85388e+05    2.96749e+02
+ Pressure (bar)   Constr. rmsd
+   -5.84386e-01    5.25422e-06
+
+           Step           Time
+         165000      330.00000
+
+   Energies (kJ/mol)
+        G96Bond       G96Angle    Proper Dih.  Improper Dih.          LJ-14
+    3.10736e+04    2.55684e+04    1.28795e+03    3.20797e+02   -4.70800e+02
+     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.   COM Pull En.
+    4.60792e+03   -1.03807e+03   -6.97788e+03    1.89791e+03    1.40449e+05
+      Potential    Kinetic En.   Total Energy  Conserved En.    Temperature
+    1.96719e+05    2.06500e+03    1.98784e+05    2.02256e+05    2.99954e+02
+ Pressure (bar)   Constr. rmsd
+   -1.72609e+00    4.23235e-06
+
+           Step           Time
+         170000      340.00000
+
+   Energies (kJ/mol)
+        G96Bond       G96Angle    Proper Dih.  Improper Dih.          LJ-14
+    3.31226e+04    2.66093e+04    1.29345e+03    3.77482e+02   -4.68257e+02
+     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.   COM Pull En.
+    4.58852e+03   -1.05919e+03   -6.92513e+03    1.92149e+03    1.54484e+05
+      Potential    Kinetic En.   Total Energy  Conserved En.    Temperature
+    2.13945e+05    2.08910e+03    2.16034e+05    2.20041e+05    3.03456e+02
+ Pressure (bar)   Constr. rmsd
+   -2.96629e-01    3.73668e-06
+
+           Step           Time
+         175000      350.00000
+
+   Energies (kJ/mol)
+        G96Bond       G96Angle    Proper Dih.  Improper Dih.          LJ-14
+    3.55181e+04    2.79171e+04    1.33805e+03    3.40234e+02   -4.73508e+02
+     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.   COM Pull En.
+    4.54861e+03   -1.11848e+03   -6.88539e+03    1.92473e+03    1.68630e+05
+      Potential    Kinetic En.   Total Energy  Conserved En.    Temperature
+    2.31740e+05    2.09739e+03    2.33837e+05    2.38276e+05    3.04660e+02
+ Pressure (bar)   Constr. rmsd
+    4.35316e-01    6.08059e-06
+
+Writing checkpoint, step 175100 at Wed Dec  6 20:52:32 2023
+
+
+Constraint error in algorithm Lincs at step 179237
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179239
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179241
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179243
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179245
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179247
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179249
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179251
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179253
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179255
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179259
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179860
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179870
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179878
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179880
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179882
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179886
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179889
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179900
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179902
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179904
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179909
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179910
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179911
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179913
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179914
+Wrote pdb files with previous and current coordinates
+Constraint error in algorithm Lincs at step 179915
+Wrote pdb files with previous and current coordinates
+Co

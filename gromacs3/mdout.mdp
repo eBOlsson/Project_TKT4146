@@ -2,7 +2,7 @@
 ;	File 'mdout.mdp' was generated
 ;	By user: unknown (1000)
 ;	On host: DESKTOP-7R8DIIJ
-;	At date: Wed Dec  6 18:07:10 2023
+;	At date: Thu Dec  7 20:48:18 2023
 ;
 ;	Created by:
 ;	             :-) GROMACS - gmx grompp, 2021.4-Ubuntu-2021.4-2 (-:
@@ -11,7 +11,7 @@
 ;	Data prefix:  /usr
 ;	Working dir:  /mnt/c/Ntnu/Nanomekanikk/Project_TKT4146/gromacs3
 ;	Command line:
-;	  gmx grompp -f md.mdp -r nvt/nvt.gro -c nvt/nvt.gro -p topology/topology.top -n index.ndx -o md_0_2/md_0_2.tpr -maxwarn 1
+;	  gmx grompp -f md.mdp -r nvt/nvt.gro -c nvt/nvt.gro -p topology/topology.top -n index.ndx -o md_2_1/md -maxwarn 1
 
 ; VARIOUS PREPROCESSING OPTIONS
 ; Preprocessor information: use cpp syntax.
@@ -69,7 +69,7 @@ nstlog                   = 5000
 nstcalcenergy            = 100
 nstenergy                = 5000
 ; Output frequency and precision for .xtc file
-nstxout-compressed       = 5000
+nstxout-compressed       = 1000
 compressed-x-precision   = 1000
 ; This selects the subset of atoms for the compressed
 ; trajectory file. You can select multiple groups. By
@@ -182,11 +182,11 @@ Shake-SOR                = no
 ; Relative tolerance of shake
 shake-tol                = 0.0001
 ; Highest order in the expansion of the constraint coupling matrix
-lincs_order              = 4
+lincs_order              = 16
 ; Number of iterations in the final step of LINCS. 1 is fine for
 ; normal simulations, but use 2 to conserve energy in NVE runs.
 ; For energy minimization with constraints it should be 4 to 8.
-lincs_iter               = 1
+lincs_iter               = 2
 ; Lincs will write a warning to the stderr if in one step a bond
 ; rotates over more degrees than
 lincs-warnangle          = 30
@@ -239,9 +239,9 @@ pull-coord1-origin       = 0.0 0.0 0.0
 pull-coord1-vec          = 0.0 0.0 0.0
 pull_coord1_start        = yes
 pull-coord1-init         = 0
-pull-coord1-rate         = 0.05
-pull-coord1-k            = 4000
-pull-coord1-kB           = 4000
+pull-coord1-rate         = 0.10
+pull-coord1-k            = 2000
+pull-coord1-kB           = 2000
 
 ; AWH biasing          
 awh                      = no
