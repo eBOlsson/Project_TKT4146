@@ -2,9 +2,11 @@ integrator              = md            ; leap-frog integrator
 nsteps                  = 500000         ; 2 fs * 1000000 = 2000 ps (2 ns) for production
 dt                      = 0.002         ; 2 fs
 
-nstxout                 = 5000             ; Output coordinates every 10 ps
-nstvout                 = 5000             ; Output velocities every 10 ps
-nstfout                 = 5000
+define                  = -DPOSRES_A -DPOSRES_B -DPOSRES_C
+
+nstxout                 = 1000             ; Output coordinates every 10 ps
+nstvout                 = 1000             ; Output velocities every 10 ps
+nstfout                 = 1000
 nstenergy               = 5000          ; Output energy every 10 ps
 nstlog                  = 5000          ; Output log every 10 ps
 nstxout-compressed      = 1000           ; save compressed coordinates every 10.0 ps
@@ -13,7 +15,7 @@ continuation            = yes           ; Continuation from NVT
 constraint_algorithm    = lincs         ; Holonomic constraints 
 constraints             = h-bonds       ; All bonds (even heavy atom-H bonds) constrained
 lincs_iter              = 2             ; Accuracy of LINCS
-lincs_order             = 16             ; Also related to LINCS
+lincs_order             = 8             ; Also related to LINCS
 ;morse                   = no            ; Trying something##########
 
 cutoff-scheme           = Verlet        ; Buffered neighbor searching
@@ -45,4 +47,4 @@ pull-coord1-groups      = 1 2           ; Groups involved (Group1 and Group2)
 pull-coord1-dim         = N N Y         ; Pulling direction (z axis in this case)
 pull_coord1_start       = yes           ; define initial COM distance > 0
 pull-coord1-rate        = 0.10          ; Pulling rate in nm/ps (1[nm/ps]=1000[m/s])
-pull-coord1-k           = 2000          ; Force constant in kJ/mol/nm^2
+pull-coord1-k           = 1000          ; Force constant in kJ/mol/nm^2
